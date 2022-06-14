@@ -19,9 +19,9 @@ global.APIKeys = {
 }
 
 //customize settings\\
-global.owner = ['1 (786) 233-0930']
-global.premium = ['1 (786) 233-0930']
-global.ownernomer = '1 (786) 233-0930'
+global.owner = ['17862330930']
+global.premium = ['17862330930']
+global.ownernomer = '17862330930'
 global.ownername = 'Tofu'
 global.botname = 'Zero-Two'
 global.footer = '©NexusNwInc.'
