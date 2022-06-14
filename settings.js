@@ -29,10 +29,10 @@ global.ig = 'https://github.com/Awesome-Tofu'
 global.region = 'India, South India, Kerala'
 global.sc = 'https://github.com/nexusNw/Gojo-Satoru'
 global.myweb = 'https://youtube.com/channel/UCqoUjPvDdb0kjXNYdvPPpHQ'
-global.packname = 'Gojo-Satoru'
+global.packname = 'Zero-Two'
 global.author = 'Tofu'
 global.sessionName = 'session'
-global.prefa = ['','!','.','❤️','🐤','🗿']
+global.prefa = ['/','!','.','❤️','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
     success: 'Done ✓',
