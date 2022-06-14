@@ -1196,7 +1196,7 @@ GojoMdNx.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { qu
 					break
 case 'how':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} is my face`)
-					const gimana = [`It's Okay`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah`,`Ohhh I See:(`,`The Patient, Boss:(`,`How Are You?`]
+					const gimana = [`It's Okay`, `It's Difficult Darling`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah`,`Ohhh I See:(`,`The Patient, Boss:(`,`How Are You?`]
 					const ya = gimana[Math.floor(Math.random() * gimana.length)]
 GojoMdNx.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: m })
 
@@ -1326,7 +1326,7 @@ case 'wangy':
 case 'checkdeath':
              if (!text) return replay(`Use Someone's Name, Example : ${prefix + command} nexus`)
               predea = await axios.get(`https://api.agify.io/?name=${q}`)
-              reply(`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Bro, Because No One Knows About Death_`)
+              reply(`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Darling, Because No One Knows About Death_`)
               break
 case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
             if (!m.quoted && !text) return replay(`Send/Reply Text With Caption ${prefix + command}`)
@@ -3528,7 +3528,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }
             break
     case 'donasi': case 'donate': case 'sewabot': case 'sewa': {
-                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/567f9aec2650d33370a3e.png' }, caption: `*Hi Bro ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/567f9aec2650d33370a3e.png' }, caption: `*Hi Darling ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
             }
             break
             case 'sc': case 'script': {
