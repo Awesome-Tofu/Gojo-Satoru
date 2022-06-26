@@ -2264,7 +2264,7 @@ case 'webtonsearch': case 'webtoon':
             break
             case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
                 reply(mess.wait)
-                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/api/random/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })
             }
             break
 	    case 'couplepp':  case 'ppcouple': {
@@ -3244,7 +3244,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             }
             break
-            case 'owner': case 'creator': {
+case 'owner': case 'creator': {
                 GojoMdNx.sendContact(m.chat, global.owner, m)
             }
             break
@@ -3255,7 +3255,35 @@ case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite'
 						GojoMdNx.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
-				case 'waifu': case 'loli':
+case 'hentai': case 'harem':
+					reply(mess.wait)
+					axios.get(`https://api.waifu.pics/nsfw/waifu`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'hneko': case 'hentaineko':
+					reply(mess.wait)
+					axios.get(`https://api.waifu.pics/nsfw/neko`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'hentaivideo': case 'hvideo':
+                        reply(mess.wait)
+                        axios.get(`https://api.waifu.pics/nsfw/trap`)
+                        .then(({data}) => {
+                        GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+                        })
+                        break  
+case 'hvideos': case 'hentaivideos':
+					reply(mess.wait)
+					axios.get(`https://api.waifu.pics/nsfw/blowjob`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break                  
+case 'waifu': case 'loli':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
 					.then(({data}) => {
@@ -3442,6 +3470,11 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"title": "Rpg Menu",
 										"description": "Displays The List Of Rpg Features",
 										"rowId": `${prefix}rpgmenu`
+									},
+                                    {
+										"title": "Hentai Menu",
+										"description": "Displays The List Of Hentai Features",
+										"rowId": `${prefix}hentaimenu`
 									},
 									{
 										"title": "Download Menu",
@@ -3854,6 +3887,21 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}leaderboard
 ┃╠${prefix}buy [option]
 ┃╠${prefix}sell [option]
+┃╚═════════════✪
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+break
+
+case 'hentaimenu':
+var unicorn = await getBuffer(picak+'Hentai Menu')
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
+┏━「 ${botname} 」━━⭓ 
+┃╔═✪「 HENTAI 」	        
+┃╠${prefix}hentai
+┃╠${prefix}harem
+┃╠${prefix}hentaineko
+┃╠${prefix}hneko
+┃╠${prefix}hentaivideo
+┃╠${prefix}hvideo
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
 break
