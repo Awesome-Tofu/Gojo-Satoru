@@ -3471,6 +3471,11 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"description": "Displays The List Of Rpg Features",
 										"rowId": `${prefix}rpgmenu`
 									},
+                                    {
+										"title": "Hentai Menu",
+										"description": "Displays The List Of Hentai Features",
+										"rowId": `${prefix}hentaimenu`
+									},
 									{
 										"title": "Download Menu",
 										"description": "Displays The List Of Download Features",
@@ -3882,6 +3887,21 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}leaderboard
 ┃╠${prefix}buy [option]
 ┃╠${prefix}sell [option]
+┃╚═════════════✪
+┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+break
+
+case 'hentaimenu':
+var unicorn = await getBuffer(picak+'Hentai Menu')
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
+┏━「 ${botname} 」━━⭓ 
+┃╔═✪「 HENTAI 」	        
+┃╠${prefix}hentai
+┃╠${prefix}harem
+┃╠${prefix}hentaineko
+┃╠${prefix}hneko
+┃╠${prefix}hentaivideo
+┃╠${prefix}hvideo
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
 break
