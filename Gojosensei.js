@@ -3244,7 +3244,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             }
             break
-            case 'owner': case 'creator': {
+case 'owner': case 'creator': {
                 GojoMdNx.sendContact(m.chat, global.owner, m)
             }
             break
@@ -3255,7 +3255,35 @@ case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite'
 						GojoMdNx.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
-				case 'waifu': case 'loli':
+case 'hentai': case 'harem':
+					reply(mess.wait)
+					axios.get(`https://api.waifu.pics/nsfw/waifu`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'hneko': case 'hentaineko':
+					reply(mess.wait)
+					axios.get(`https://api.waifu.pics/nsfw/neko`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'hentaivideo': case 'hvideo':
+                        reply(mess.wait)
+                        axios.get(`https://api.waifu.pics/nsfw/trap`)
+                        .then(({data}) => {
+                        GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+                        })
+                        break  
+case 'hvideos': case 'hentaivideos':
+					reply(mess.wait)
+					axios.get(`https://api.waifu.pics/nsfw/blowjob`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break                  
+case 'waifu': case 'loli':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
 					.then(({data}) => {
