@@ -2289,6 +2289,20 @@ case 'webtonsearch': case 'webtoon':
                 GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
+            case 'neko': case 'neko': {
+                let buttons = [
+                        {buttonId: `neko`, buttonText: {displayText: '➡️Next Image➡️'}, type: 1}
+                    ]
+                    let buttonMessage = {
+                        image: { url: 'https://coffee.alexflipnote.dev/random' },
+                        caption: `😺 Random Neko`,
+                        footer: GojoMdNx.user.name,
+                        buttons: buttons,
+                        headerType: 4
+                    }
+                    GojoMdNx.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
             case 'wallpaper': {
                 if (!text) return reply(`Enter Query Title`)
 		let { wallpaper } = require('./lib/scraper')
