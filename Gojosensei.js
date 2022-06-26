@@ -2264,7 +2264,7 @@ case 'webtonsearch': case 'webtoon':
             break
             case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
                 reply(mess.wait)
-                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', 'randomanime/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })
             }
             break
 	    case 'couplepp':  case 'ppcouple': {
