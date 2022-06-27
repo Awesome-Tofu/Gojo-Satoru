@@ -2267,6 +2267,11 @@ case 'webtonsearch': case 'webtoon':
                 GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })
             }
             break
+            case 'maid': {
+                reply(mess.wait)
+                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/api/morensfw/'+command, {}, '6827235354') }, caption: 'Generated Random ' + command }, { quoted: m })
+            }
+            break
 	    case 'couplepp':  case 'ppcouple': {
                 reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
@@ -3273,14 +3278,14 @@ case 'hentaivideo': case 'hvideo':
                         reply(mess.wait)
                         axios.get(`https://api.waifu.pics/nsfw/trap`)
                         .then(({data}) => {
-                        GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+                        GojoMdNx.sendVideo(m.chat, data.url, mess.success, m)
                         })
                         break  
 case 'hvideos': case 'hentaivideos':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/nsfw/blowjob`)
 					.then(({data}) => {
-					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					GojoMdNx.sendVideo(m.chat, data.url, mess.success, m)
 					})
 					break                  
 case 'waifu': case 'loli':
@@ -3472,9 +3477,9 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}rpgmenu`
 									},
                                     {
-										"title": "Hentai Menu",
-										"description": "Displays The List Of Hentai Features",
-										"rowId": `${prefix}hentaimenu`
+										"title": "Lewd Menu",
+										"description": "Displays The List Of Lewd Stuff",
+										"rowId": `${prefix}lewdmenu`
 									},
 									{
 										"title": "Download Menu",
@@ -3543,16 +3548,6 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 									}
 								]
 							},
-							{
-								"title": "Credit",
-								"rows": [
-									{
-										"title": "Thanks To",
-										"description": "Displays The List Of Credit Of The Bot !!",
-										"rowId": `${prefix}tqtt`
-									}
-								]
-							}
 						],
           listType: 1
                 }
@@ -3561,7 +3556,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }
             break
     case 'donasi': case 'donate': case 'sewabot': case 'sewa': {
-                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/567f9aec2650d33370a3e.png' }, caption: `*Hi Darling ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/b8bb585ae991fbd95eec5.png' }, caption: `*Hi Darling ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
             }
             break
             case 'sc': case 'script': {
@@ -3626,6 +3621,14 @@ case 'allmenu': {
 ┃╠${prefix}leaderboard
 ┃╠${prefix}buy [option]
 ┃╠${prefix}sell [option]
+┃╔═✪「 LEWD 」	        
+┃╠${prefix}hentai
+┃╠${prefix}harem
+┃╠${prefix}hentaineko
+┃╠${prefix}hneko
+┃╠${prefix}hentaivideo
+┃╠${prefix}hvideo
+┃╚═════════════✪
 ┃╠═✪「 DOWNLOADER 」☯︎
 ┃╠${prefix}ytmp3 [url|quality]
 ┃╠${prefix}ytmp4 [url|quality]
@@ -3891,11 +3894,11 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
 break
 
-case 'hentaimenu':
-var unicorn = await getBuffer(picak+'Hentai Menu')
+case 'lewdmenu':
+var unicorn = await getBuffer(picak+'Lewd Menu')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓ 
-┃╔═✪「 HENTAI 」	        
+┃╔═✪「 LEWD 」	        
 ┃╠${prefix}hentai
 ┃╠${prefix}harem
 ┃╠${prefix}hentaineko
