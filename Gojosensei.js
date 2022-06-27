@@ -3297,6 +3297,13 @@ case 'maid':
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
+case 'hmaid':
+					reply(mess.wait)
+					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/hentais/hmaid.json`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
 case "setmenuxxx": 
 if (!text) return reply("1. image\n2. list\n3. catalog\n\nExample .setmenu image")
 if (q == "image") {
