@@ -3637,6 +3637,8 @@ case 'allmenu': {
 ┃╠${prefix}hneko
 ┃╠${prefix}hentaivideo
 ┃╠${prefix}hvideo
+┃╠${prefix}maid
+┃╠${prefix}hmaid
 ┃╚═════════════✪
 ┃╠═✪「 DOWNLOADER 」☯︎
 ┃╠${prefix}ytmp3 [url|quality]
@@ -3914,6 +3916,8 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}hneko
 ┃╠${prefix}hentaivideo
 ┃╠${prefix}hvideo
+┃╠${prefix}maid
+┃╠${prefix}hmaid
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
 break
