@@ -2269,7 +2269,7 @@ case 'webtonsearch': case 'webtoon':
             break
             case 'maid': {
                 reply(mess.wait)
-                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/api/morensfw/'+command, {}, '6827235354') }, caption: 'Generated Random ' + command }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/api/morensfw/'+command, {}, 'f68f974f047e') }, caption: 'Generated Random ' + command }, { quoted: m })
             }
             break
 	    case 'couplepp':  case 'ppcouple': {
