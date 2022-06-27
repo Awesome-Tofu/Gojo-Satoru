@@ -3292,7 +3292,7 @@ case 'waifu': case 'loli':
 					break
 case 'maid':
 					reply(mess.wait)
-					axios.get(`https://zenzapis.xyz/randomanime/maid?apikey=f68f974f047e`)
+					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/maid.json`)
 					.then(({data}) => {
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
