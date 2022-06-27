@@ -2267,11 +2267,6 @@ case 'webtonsearch': case 'webtoon':
                 GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })
             }
             break
-            case 'maid': {
-                reply(mess.wait)
-                GojoMdNx.sendMessage(m.chat, { image: { url: api('zenz', '/api/morensfw/'+command, {}, 'f68f974f047e') }, caption: 'Generated Random ' + command }, { quoted: m })
-            }
-            break
 	    case 'couplepp':  case 'ppcouple': {
                 reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
@@ -3291,6 +3286,13 @@ case 'hvideos': case 'hentaivideos':
 case 'waifu': case 'loli':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'maid':
+					reply(mess.wait)
+					axios.get(`https://zenzapis.xyz/randomanime/maid?apikey=f68f974f047e`)
 					.then(({data}) => {
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
