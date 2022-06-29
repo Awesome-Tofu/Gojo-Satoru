@@ -3290,6 +3290,13 @@ case 'waifu': case 'loli':
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
+case 'husbando': case 'husbu':
+					reply(mess.wait)
+					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/husbando.json`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
 case 'maid':
 					reply(mess.wait)
 					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/maid.json`)
