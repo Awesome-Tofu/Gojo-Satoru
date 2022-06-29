@@ -3290,7 +3290,7 @@ case 'waifu': case 'loli':
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case 'husbando': case 'husbu':
+case 'husbando':
 					reply(mess.wait)
 					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/husbando.json`)
 					.then(({data}) => {
@@ -3637,7 +3637,7 @@ case 'allmenu': {
 ┃╠${prefix}leaderboard
 ┃╠${prefix}buy [option]
 ┃╠${prefix}sell [option]
-┃╔═✪「 LEWD 」	        
+┃╔═✪「 LEWD 」☯︎	        
 ┃╠${prefix}hentai
 ┃╠${prefix}harem
 ┃╠${prefix}hentaineko
@@ -3645,7 +3645,6 @@ case 'allmenu': {
 ┃╠${prefix}hentaivideo
 ┃╠${prefix}hvideo
 ┃╠${prefix}hmaid
-┃╚═════════════✪
 ┃╠═✪「 DOWNLOADER 」☯︎
 ┃╠${prefix}ytmp3 [url|quality]
 ┃╠${prefix}ytmp4 [url|quality]
@@ -3672,6 +3671,8 @@ case 'allmenu': {
 ┃╠${prefix}couplepp
 ┃╠═✪「 RANDOM ANIME 」☯︎
 ┃╠${prefix}loli
+┃╠${prefix}waifu
+┃╠${prefix}husbando
 ┃╠${prefix}maid
 ┃╠${prefix}bully
 ┃╠${prefix}cuddle
@@ -4060,6 +4061,9 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓ 
 ┃╔✪「 RANDOM ANIME 」	        
 ┃╠${prefix}loli
+┃╠${prefix}maid
+┃╠${prefix}waifu
+┃╠${prefix}husbando
 ┃╠${prefix}bully
 ┃╠${prefix}cuddle
 ┃╠${prefix}cry
