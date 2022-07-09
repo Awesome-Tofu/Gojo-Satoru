@@ -111,6 +111,7 @@ let setik = JSON.parse(fs.readFileSync('./database/setik.json'));
 let vien = JSON.parse(fs.readFileSync('./database/vien.json'));
 let imagi = JSON.parse(fs.readFileSync('./database/imagi.json'))
 let videox = JSON.parse(fs.readFileSync('./database/video.json'))
+let gifx = JSON.parse(fs.readFileSync('./database/giffy.json'))
 
 //read database\\
 let tebaklagu = db.data.game.tebaklagu = []
@@ -279,6 +280,13 @@ const reply = (teks) => {
 					result = fs.readFileSync(`./GojoMedia/vid/${anjh}.mp4`)
 					GojoMdNx.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
+                }
+                    for (let anjh of gifx){
+              if (budy === anjh){
+                   result = fs.readFileSync(`./GojoMedia/gif/${anjh}.gif`)
+                    GojoMdNx.sendMessage(m.chat, { video: result, gifPlayback: true }, { quoted: m })
+                    }
+              }
 				  }
 
       //Mute Chat\\
