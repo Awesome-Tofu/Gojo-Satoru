@@ -3083,7 +3083,7 @@ View List Of Messages With ${prefix}listmsg`)
                 delete this.anonymous[room.id]
                 if (command === 'leave') break
             }
-            case 'mulai': case 'start': {
+            case 'mulai': case 'search': {
                 if (m.isGroup) return reply('Features Cannot Be Used For Groups!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 if (Object.values(this.anonymous).find(room => room.check(m.sender))) {
