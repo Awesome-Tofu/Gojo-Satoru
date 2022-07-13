@@ -279,7 +279,8 @@ const reply = (teks) => {
 					result = fs.readFileSync(`./GojoMedia/vid/${anjh}.mp4`)
 					GojoMdNx.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
-				  }
+                }
+				  
 
       //Mute Chat\\
       if (db.data.chats[m.chat].mute && !isAdmins && !isCreator) {
@@ -3273,19 +3274,40 @@ case 'hentaivideo': case 'hvideo':
                         reply(mess.wait)
                         axios.get(`https://api.waifu.pics/nsfw/trap`)
                         .then(({data}) => {
-                        GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+                        GojoMdNx.sendVideo(m.chat, data.url, mess.success, m)
                         })
                         break  
 case 'hvideos': case 'hentaivideos':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/nsfw/blowjob`)
 					.then(({data}) => {
-					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					GojoMdNx.sendVideo(m.chat, data.url, mess.success, m)
 					})
 					break                  
 case 'waifu': case 'loli':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'husbando':
+					reply(mess.wait)
+					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/husbando.json`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'maid':
+					reply(mess.wait)
+					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/maid.json`)
+					.then(({data}) => {
+					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'hmaid':
+					reply(mess.wait)
+					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/hentais/hmaid.json`)
 					.then(({data}) => {
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
@@ -3430,7 +3452,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 GojoMdNx.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
                 break
-                case 'command': {
+                case 'command': case 'help': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `Hi ${pushname}`,
@@ -3472,9 +3494,9 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}rpgmenu`
 									},
                                     {
-										"title": "Hentai Menu",
-										"description": "Displays The List Of Hentai Features",
-										"rowId": `${prefix}hentaimenu`
+										"title": "Lewd Menu",
+										"description": "Displays The List Of Lewd Stuff",
+										"rowId": `${prefix}lewdmenu`
 									},
 									{
 										"title": "Download Menu",
@@ -3543,16 +3565,6 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 									}
 								]
 							},
-							{
-								"title": "Credit",
-								"rows": [
-									{
-										"title": "Thanks To",
-										"description": "Displays The List Of Credit Of The Bot !!",
-										"rowId": `${prefix}tqtt`
-									}
-								]
-							}
 						],
           listType: 1
                 }
@@ -3561,7 +3573,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }
             break
     case 'donasi': case 'donate': case 'sewabot': case 'sewa': {
-                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/567f9aec2650d33370a3e.png' }, caption: `*Hi Darling ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
+                GojoMdNx.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/b8bb585ae991fbd95eec5.png' }, caption: `*Hi Darling ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
             }
             break
             case 'sc': case 'script': {
@@ -3626,6 +3638,14 @@ case 'allmenu': {
 ┃╠${prefix}leaderboard
 ┃╠${prefix}buy [option]
 ┃╠${prefix}sell [option]
+┃╔═✪「 LEWD 」☯︎	        
+┃╠${prefix}hentai
+┃╠${prefix}harem
+┃╠${prefix}hentaineko
+┃╠${prefix}hneko
+┃╠${prefix}hentaivideo
+┃╠${prefix}hvideo
+┃╠${prefix}hmaid
 ┃╠═✪「 DOWNLOADER 」☯︎
 ┃╠${prefix}ytmp3 [url|quality]
 ┃╠${prefix}ytmp4 [url|quality]
@@ -3652,6 +3672,9 @@ case 'allmenu': {
 ┃╠${prefix}couplepp
 ┃╠═✪「 RANDOM ANIME 」☯︎
 ┃╠${prefix}loli
+┃╠${prefix}waifu
+┃╠${prefix}husbando
+┃╠${prefix}maid
 ┃╠${prefix}bully
 ┃╠${prefix}cuddle
 ┃╠${prefix}cry
@@ -3891,17 +3914,18 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
 break
 
-case 'hentaimenu':
-var unicorn = await getBuffer(picak+'Hentai Menu')
+case 'lewdmenu':
+var unicorn = await getBuffer(picak+'Lewd Menu')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓ 
-┃╔═✪「 HENTAI 」	        
+┃╔═✪「 LEWD 」	        
 ┃╠${prefix}hentai
 ┃╠${prefix}harem
 ┃╠${prefix}hentaineko
 ┃╠${prefix}hneko
 ┃╠${prefix}hentaivideo
 ┃╠${prefix}hvideo
+┃╠${prefix}hmaid
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
 break
@@ -4038,6 +4062,9 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓ 
 ┃╔✪「 RANDOM ANIME 」	        
 ┃╠${prefix}loli
+┃╠${prefix}maid
+┃╠${prefix}waifu
+┃╠${prefix}husbando
 ┃╠${prefix}bully
 ┃╠${prefix}cuddle
 ┃╠${prefix}cry
