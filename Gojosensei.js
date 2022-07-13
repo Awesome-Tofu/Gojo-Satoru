@@ -280,7 +280,7 @@ const reply = (teks) => {
 					GojoMdNx.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
                 }
-				  }
+				  
 
       //Mute Chat\\
       if (db.data.chats[m.chat].mute && !isAdmins && !isCreator) {
