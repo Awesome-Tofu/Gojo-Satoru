@@ -111,7 +111,6 @@ let setik = JSON.parse(fs.readFileSync('./database/setik.json'));
 let vien = JSON.parse(fs.readFileSync('./database/vien.json'));
 let imagi = JSON.parse(fs.readFileSync('./database/imagi.json'))
 let videox = JSON.parse(fs.readFileSync('./database/video.json'))
-let gifx = JSON.parse(fs.readFileSync('./database/giffy.json'))
 
 //read database\\
 let tebaklagu = db.data.game.tebaklagu = []
@@ -141,7 +140,7 @@ module.exports = GojoMdNx = async (GojoMdNx, m, chatUpdate, store) => {
         const text = q = args.join(" ")
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
-	    const isMedia = /image|video|sticker|gif|audio/.test(mime)
+	    const isMedia = /image|video|sticker|audio/.test(mime)
 	    const from = mek.key.remoteJid
 	    const type = Object.keys(mek.message)[0]        
 	    const content = JSON.stringify(mek.message)
@@ -281,12 +280,6 @@ const reply = (teks) => {
 					GojoMdNx.sendMessage(m.chat, { video: result }, { quoted: m })
 					}
                 }
-                    for (let anjh of gifx){
-              if (budy === anjh){
-                   result = fs.readFileSync(`./GojoMedia/gif/${anjh}.mp4`)
-                    GojoMdNx.sendMessage(m.chat, { video: result }, { quoted: m })
-                    }
-              }
 				  }
 
       //Mute Chat\\
