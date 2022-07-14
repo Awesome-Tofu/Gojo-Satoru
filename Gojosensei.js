@@ -3873,7 +3873,7 @@ case 'test1': case 'test2': case 'test3':
   if (!isInventory){ addInventori(m.sender) }
   if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
 
-    var GojoMdNx = await getBuffer(picak+`User's Inventory`)
+    var unicorn = await getBuffer(picak+`User's Inventory`)
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓ 
 ┃╔═✪_[ 👩🏻‍💼INFO USER👨🏻‍💼 ]_
