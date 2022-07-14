@@ -571,31 +571,33 @@ In ${clockString(new Date - user.afkTime)}
             user.afkReason = ''
         }
 switch(command) {
-        case 'inventori': case 'inventory': case 'profile':{
-if (q.includes('--help')) return reply(examkosong) 
-  if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
-  if (!isInventory){ addInventori(m.sender) }
-  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
-     
-     var GojoMdNx = await getBuffer(picak+`User's Inventory`)
-     await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
-     ┃╠_[ 👩🏻‍💼INFO USER👨🏻‍💼 ]_\n
-     ┃╠ *❤️Your Blood* : ${getDarah(m.sender)}
-     ┃╠ *◻️️Your Iron* : ${getBesi(m.sender)}
-     ┃╠ *🌟Your Gold* : ${getEmas(m.sender)}
-     ┃╠ *💎Your Emerald* : ${getEmerald(m.sender)}
-     ┃╠ *⏺️Your Limit* : ${getLimit(m.sender)}
-     ┃╠ *🧪Your Potion* : ${getPotion(m.sender)}
-     ┃╠ _[ 🐺HUNT RESULT🐺 ]_
-     ┃╠ *🐟Fish* : ${getIkan(m.sender)}
-     ┃╠ *🐔Chicken* : ${getAyam(m.sender)}
-     ┃╠ *🐇Rabbit* : ${getKelinci(m.sender)}
-     ┃╠ *🐑Sheep* : ${getDomba(m.sender)}
-     ┃╠ *🐄Cow* : ${getSapi(m.sender)}
-     ┃╠ *🐘Elephant* : ${getGajah(m.sender)}
-     ┗━━ ${pushname} `,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
-  }
-  break
+
+    case 'inventori': case 'inventory': case 'profile':{
+        if (q.includes('--help')) return reply(examkosong) 
+          if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
+          if (!isInventory){ addInventori(m.sender) }
+          if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
+             
+             var GojoMdNx = await getBuffer(picak+`User's Inventory`)
+             let teksehmazeh = `_[ 👩🏻‍💼INFO USER👨🏻‍💼 ]_\n\n`
+             teksehmazeh += `*❤️Your Blood* : ${getDarah(m.sender)}\n`
+             teksehmazeh += `*◻️️Your Iron* : ${getBesi(m.sender)}\n`
+             teksehmazeh += `*🌟Your Gold* : ${getEmas(m.sender)}\n`
+             teksehmazeh += `*💎Your Emerald* : ${getEmerald(m.sender)}\n`
+             teksehmazeh += `*⏺️Your Limit* : ${getLimit(m.sender)}\n`
+             teksehmazeh += `*🧪Your Potion* : ${getPotion(m.sender)}\n\n`
+             teksehmazeh += `_[ 🐺HUNT RESULT🐺 ]_\n`
+             teksehmazeh += `*🐟Fish* : ${getIkan(m.sender)}\n`
+             teksehmazeh += `*🐔Chicken* : ${getAyam(m.sender)}\n`
+             teksehmazeh += `*🐇Rabbit* : ${getKelinci(m.sender)}\n`
+             teksehmazeh += `*🐑Sheep* : ${getDomba(m.sender)}\n`
+             teksehmazeh += `*🐄Cow* : ${getSapi(m.sender)}\n`
+             teksehmazeh += `*🐘Elephant* : ${getGajah(m.sender)}\n\n`
+             teksehmazeh += `_*${pushname}*_`
+             await GojoMdNx.send5ButImg(from, `` + '' + teksehmazeh, `© ${footer}`, GojoMdNx, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}}])
+          }
+          break
+          
         case 'userlimit': 
 {      
    let txt = `「 *ALL LIMIT USER* 」\n\n`
@@ -3865,33 +3867,6 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠ ${prefix}report [bug]
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
-break
-
-case 'test1': case 'test2': case 'test3':
-    if (q.includes('--help')) return reply(examkosong) 
-  if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
-  if (!isInventory){ addInventori(m.sender) }
-  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
-
-    var unicorn = await getBuffer(picak+`User's Inventory`)
-await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
-┏━「 ${botname} 」━━⭓ 
-┃╔═✪_[ 👩🏻‍💼INFO USER👨🏻‍💼 ]_
-┃╠ *❤️Your Blood* : ${getDarah(m.sender)}
-┃╠ *◻️️Your Iron* : ${getBesi(m.sender)}
-┃╠ *🌟Your Gold* : ${getEmas(m.sender)}
-┃╠ *💎Your Emerald* : ${getEmerald(m.sender)}
-┃╠ *⏺️Your Limit* : ${getLimit(m.sender)}
-┃╠ *🧪Your Potion* : ${getPotion(m.sender)}
-┃╠═✪ _[ 🐺HUNT RESULT🐺 ]_
-┃╠ *🐟Fish* : ${getIkan(m.sender)}
-┃╠ *🐔Chicken* : ${getAyam(m.sender)}
-┃╠ *🐇Rabbit* : ${getKelinci(m.sender)}
-┃╠ *🐑Sheep* : ${getDomba(m.sender)}
-┃╠ *🐄Cow* : ${getSapi(m.sender)}
-┃╠ *🐘Elephant* : ${getGajah(m.sender)}
-┃╚═════════════✪
-┗━━「 ${pushname} 」━⭓`,GojoMdNx, `© ${footer}`, [{"urlButton": {"displayText": "YouTube 📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
 break
 
 case 'grupmenu': case 'groupmenu':
