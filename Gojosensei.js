@@ -3867,6 +3867,33 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube 📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
 break
 
+case 'test1': case 'test2': case 'test3':
+    if (q.includes('--help')) return reply(examkosong) 
+  if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
+  if (!isInventory){ addInventori(m.sender) }
+  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
+
+    var GojoMdNx = await getBuffer(picak+`User's Inventory`)
+await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
+┏━「 ${botname} 」━━⭓ 
+┃╔═✪_[ 👩🏻‍💼INFO USER👨🏻‍💼 ]_
+┃╠ *❤️Your Blood* : ${getDarah(m.sender)}
+┃╠ *◻️️Your Iron* : ${getBesi(m.sender)}
+┃╠ *🌟Your Gold* : ${getEmas(m.sender)}
+┃╠ *💎Your Emerald* : ${getEmerald(m.sender)}
+┃╠ *⏺️Your Limit* : ${getLimit(m.sender)}
+┃╠ *🧪Your Potion* : ${getPotion(m.sender)}
+┃╠═✪ _[ 🐺HUNT RESULT🐺 ]_
+┃╠ *🐟Fish* : ${getIkan(m.sender)}
+┃╠ *🐔Chicken* : ${getAyam(m.sender)}
+┃╠ *🐇Rabbit* : ${getKelinci(m.sender)}
+┃╠ *🐑Sheep* : ${getDomba(m.sender)}
+┃╠ *🐄Cow* : ${getSapi(m.sender)}
+┃╠ *🐘Elephant* : ${getGajah(m.sender)}
+┃╚═════════════✪
+┗━━「 ${pushname} 」━⭓`,GojoMdNx, `© ${footer}`, [{"urlButton": {"displayText": "YouTube 📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
+break
+
 case 'grupmenu': case 'groupmenu':
 var unicorn = await getBuffer(picak+'Group Menu')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
