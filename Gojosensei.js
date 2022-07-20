@@ -3342,6 +3342,87 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
+                    case 'start': {
+                        timestampe = speed();
+                    latensie = speed() - timestampe
+                     anu = ` `
+                          let location = ["Hello There!","Ohayo Darling!","How re you","Hey!","Waddup!","Supp!!"]
+                           var greet = location[Math.floor(Math.random() * location.length)]
+                         if (greet === 'Hello There!') {
+                            var image = './storage/image/rimba.jpg'
+                           } else
+                         if (greet === 'Ohayo Darling!') {
+                            var image =  './storage/image/amazon.jpg'
+                           } else
+                         if (greet === 'How re you') {
+                            var image = './storage/image/tropis.jpg'
+                           } else
+                         if (greet === 'Hey!') {
+                            var image = './storage/image/padang_rumput.jpg'
+                           } else
+                         if (greet === 'Waddup!') {
+                            var image = './storage/image/afrika.jpg'
+                           } else
+                         if (greet === 'Supp!!') {
+                           var image = './storage/image/pegunungan.jpg'
+                           }
+                         setTimeout( () => {
+                          let template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+                            templateMessage: {
+                                hydratedTemplate: {
+                                    hydratedContentText: anu,
+                                    locationMessage: {
+                                    jpegThumbnail: fs.readFileSync('./GojoMedia/gojo.jpg')},
+                                    hydratedFooterText: `┌─❖
+                    │「 Hi 👋 」
+                    └┬❖ 「 ${pushname} 」
+                    ┌┤✑  $(greet)🎉
+                    ││✑  ❤️🖐️!!
+                    │└───────────────┈ ⳹
+                    │ 「 BOT INFO 」
+                    │✙ 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
+                    │✙ 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
+                    │✙ 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
+                    │✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
+                    │✙ 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
+                    │✙ 𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
+                    │✙ 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
+                    │✙ 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
+                    └┬──────────────┈ ⳹
+                    │✑  Please Select The Button Below
+                    └───────────────┈ ⳹`,
+                                    hydratedButtons: [{
+                                        urlButton: {
+                                            displayText: 'YouTube📍',
+                                            url: `${myweb}`
+                                        }
+                                    }, {
+                                        urlButton: {
+                                        displayText: 'Script🔖',
+                                            url: `${sc}`
+                                        }
+                                    }, {
+                                        quickReplyButton: {
+                                            displayText: '🍇All Menu🍇',
+                                            id: `${prefix}allmenu`
+                                        }
+                                        }, {
+                                        quickReplyButton: {
+                                            displayText: '🍒List Menu🍒',
+                                            id: `${prefix}command`
+                                        }
+                                        }, {
+                                        quickReplyButton: {
+                                            displayText: '👤Owner👤',
+                                            id: `${prefix}owner`
+                                        }
+                                    }]
+                                }
+                            }
+                        }), { userJid: m.chat })
+                        GojoMdNx.relayMessage(m.chat, template.message, { messageId: template.key.id })
+                        }
+break
                      case 'alive': case 'bot':{
                            	timestampe = speed();
 latensie = speed() - timestampe
