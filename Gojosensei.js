@@ -283,7 +283,7 @@ const reply = (teks) => {
                 }
                 for (let anjh of gifx){
                     if (budy === anjh){
-                        result = fs.readFileSync(`./GojoMedia/gif/${anjh}.gif`)
+                        result = fs.readFileSync(`./GojoMedia/gif/${anjh}.mp4`)
                         GojoMdNx.sendMessage(m.chat, { video: result, gifPlayback: true }, { quoted: m })
                         }
                     }
