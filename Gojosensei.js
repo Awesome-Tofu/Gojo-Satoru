@@ -285,6 +285,7 @@ const reply = (teks) => {
                     if (budy === anjh){
                         result = fs.readFileSync(`./GojoMedia/gif/${anjh}.mp4`)
                         GojoMdNx.sendMessage(m.chat, { video: result, gifPlayback: true }, { quoted: m })
+                        //upload in json as mp4, but that must no be longer than 5 seconds 
                         }
                     }
 				  
