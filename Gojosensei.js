@@ -3421,7 +3421,6 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
                             }
                         }), { userJid: m.chat })
                         GojoMdNx.relayMessage(m.chat, template.message, { messageId: template.key.id })
-                        }
 break
                      case 'alive': case 'bot':{
                            	timestampe = speed();
