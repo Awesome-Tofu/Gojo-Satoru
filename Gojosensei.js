@@ -3297,9 +3297,7 @@ case 'hgif': case 'hentaigif': case 'hgifs':
 case 'hvideo':  case 'hvideos': case 'hentaivideos': case 'hentaivideo': {
                         reply(mess.wait)
                         let anu = await fetchJson('https://zenzapis.xyz/downloader/hentaivid/longer?apikey=44083583a1')
-                        let random = anu[Math.floor(Math.random() * anu.length)]
-                        GojoMdNx.sendMessage(m.chat, { video: { url: random.video_2 }, caption: `Video 1` }, { quoted: m })
-                        GojoMdNx.sendMessage(m.chat, { video: { url: random.video_1 }, caption: `Video 2` }, { quoted: m })
+                        GojoMdNx.sendMessage(m.chat, { video: { url: video_1 }, caption: `Video 1` }, { quoted: m })
                     }
                 break                  
 case 'waifu': case 'loli':
