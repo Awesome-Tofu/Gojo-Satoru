@@ -3280,20 +3280,20 @@ case 'hneko': case 'hentaineko':
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case 'hentaivideo': case 'hvideo':
+case 'hentapic': case 'hentaipics': case 'hpics': case 'hpic':
                         reply(mess.wait)
                         axios.get(`https://api.waifu.pics/nsfw/trap`)
                         .then(({data}) => {
-                        GojoMdNx.sendVideo(m.chat, data.url, mess.success, m)
+                        GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
                         })
                         break  
-case 'hvideos': case 'hentaivideos':
+case 'hgif': case 'hentaigif': case 'hgifs':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/nsfw/blowjob`)
 					.then(({data}) => {
-					GojoMdNx.sendVideo(m.chat, data.url, mess.success, m)
+					GojoMdNx.sendGif(m.chat, data.url, mess.success, m)
 					})
-					break                  
+					break                
 case 'waifu': case 'loli':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
@@ -3315,7 +3315,14 @@ case 'maid':
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case 'hmaid':
+case 'hvideo':  case 'hentaivideo': {
+                        reply(mess.wait)
+                        let anu = await fetchJson('https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/hentais/hvideo.json')
+                        let random = anu[Math.floor(Math.random() * anu.length)]
+                        GojoMdNx.sendMessage(m.chat, { video: { url: random.vidone }, caption: `Horny *BONK*` }, { quoted: m })
+                    }
+                break
+case 'hmaid': case 'hentaimaid':
 					reply(mess.wait)
 					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/hentais/hmaid.json`)
 					.then(({data}) => {
@@ -3342,6 +3349,7 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
+                  
                      case 'alive': case 'bot':{
                            	timestampe = speed();
 latensie = speed() - timestampe
@@ -3653,7 +3661,8 @@ case 'allmenu': {
 ┃╠${prefix}harem
 ┃╠${prefix}hentaineko
 ┃╠${prefix}hneko
-┃╠${prefix}hentaivideo
+┃╠${prefix}hpic
+┃╠${prefix}hgif
 ┃╠${prefix}hvideo
 ┃╠${prefix}hmaid
 ┃╠═✪「 DOWNLOADER 」☯︎
@@ -3933,7 +3942,8 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}harem
 ┃╠${prefix}hentaineko
 ┃╠${prefix}hneko
-┃╠${prefix}hentaivideo
+┃╠${prefix}hpic
+┃╠${prefix}hgif
 ┃╠${prefix}hvideo
 ┃╠${prefix}hmaid
 ┃╚═════════════✪
