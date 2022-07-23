@@ -2286,6 +2286,12 @@ case 'webtonsearch': case 'webtoon':
                 GojoMdNx.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: m })
             }
 	    break
+       case 'meme': {
+            reply(mess.wait)
+            let anu = await fetchJson('https://meme-api.herokuapp.com/gimme')
+            GojoMdNx.sendMessage(m.chat, { image: { url: url }, caption: `Succeeded` }, { quoted: m })
+        }
+    break
             case 'coffee': case 'kopi': {
             let buttons = [
                     {buttonId: `coffe`, buttonText: {displayText: '➡️Next Image➡️'}, type: 1}
