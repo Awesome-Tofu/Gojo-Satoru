@@ -1892,7 +1892,7 @@ break
                 }
             }
             break
-case 'smemex': case 'stickermemex': case 'stickmemex': {
+case 'memefy': case 'stickermemex': case 'smemex': {
 let { TelegraPh } = require('./lib/uploader')
 if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
 if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
@@ -2286,12 +2286,19 @@ case 'webtonsearch': case 'webtoon':
                 GojoMdNx.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: m })
             }
 	    break
-       case 'meme': {
+        case 'meme': {
+            reply(mess.wait)
+            let anu = await fetchJson('https://meme-api.herokuapp.com/gimme')
+            let random = anu[Math.floor(Math.random() * anu.length)]
+            GojoMdNx.sendMessage(m.chat, { image: { url: random.url }, caption: `*MEME*` }, { quoted: m })
+        }
+    break
+      /* case 'meme': {
             reply(mess.wait)
             await fetchJson('https://meme-api.herokuapp.com/gimme')
             GojoMdNx.sendMessage(m.chat, { image: { url: url }, caption: `Succeeded` }, { quoted: m })
         }
-    break
+    break*/
             case 'coffee': case 'kopi': {
             let buttons = [
                     {buttonId: `coffee`, buttonText: {displayText: '➡️Next Image➡️'}, type: 1}
@@ -2899,7 +2906,7 @@ Available Formats: pdf, docx, pptx, xlsx`)
 		}
 		}
 		break
-		case 'hadisxxx': case 'hadistxxx': {
+		/*case 'hadisxxx': case 'hadistxxx': {
 		if (!args[0]) return reply(`Example:
 ${prefix + command} bukhari 1
 ${prefix + command} abu-daud 1
@@ -2947,7 +2954,7 @@ ${id}`)
 		reply(txt)
 		GojoMdNx.sendMessage(m.chat, {audio: { url: res.result.data.audio.primary }, mimetype: 'audio/mpeg'}, { quoted : m })
 		}
-		break
+		break*/
 		case 'tafsirsurahxxx': {
 		if (!args[0]) return reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
 		if (!args[1]) return reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
@@ -3961,7 +3968,7 @@ var unicorn = await getBuffer(picak+'Fun Menu')
 await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┏━「 ${botname} 」━━⭓ 
 ┃╔═✪「 FUN 」	        
-┃╠ ${prefix}how [text
+┃╠ ${prefix}how [text]
 ┃╠ ${prefix}when [text]
 ┃╠ ${prefix}is [text]
 ┃╠ ${prefix}what [text]
