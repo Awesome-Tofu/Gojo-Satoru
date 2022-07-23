@@ -3284,7 +3284,7 @@ case 'hentaigif': case 'hgif':
                         reply(mess.wait)
                         axios.get(`https://api.waifu.pics/nsfw/trap`)
                         .then(({data}) => {
-                        GojoMdNx.sendVideo(m.chat, data.url, mess.success, m)
+                        GojoMdNx.sendMessage(m.chat, data.url, mess.success, m{ video: result, gifPlayback: true })
                         })
                         break  
 case 'hblowjob': case 'hentaiblowjob':
