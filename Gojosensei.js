@@ -3284,14 +3284,14 @@ case 'hentaigif': case 'hgif':
                         reply(mess.wait)
                         axios.get(`https://api.waifu.pics/nsfw/trap`)
                         .then(({data}) => {
-                        GojoMdNx.sendVideo(m.chat, data.url, mess.success, m)
+                        GojoMdNx.sendGif(m.chat, data.url, mess.success, m)
                         })
                         break  
 case 'hblowjob': case 'hentaiblowjob':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/nsfw/blowjob`)
 					.then(({data}) => {
-					GojoMdNx.sendVideo(m.chat, data.url, mess.success, m)
+					GojoMdNx.sendGif(m.chat, data.url, mess.success, m)
 					})
 					break                  
 case 'waifu': case 'loli':
