@@ -3280,14 +3280,14 @@ case 'hneko': case 'hentaineko':
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case 'hentaigif': case 'hgif':
+case 'hentapic': case 'hentaipics': case 'hpics': case 'hpic':
                         reply(mess.wait)
                         axios.get(`https://api.waifu.pics/nsfw/trap`)
                         .then(({data}) => {
-                        GojoMdNx.sendGif(m.chat, data.url, mess.success, m)
+                        GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
                         })
                         break  
-case 'hblowjob': case 'hentaiblowjob':
+case 'hgif': case 'hentaigif': case 'hgifs':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/nsfw/blowjob`)
 					.then(({data}) => {
@@ -3654,8 +3654,8 @@ case 'allmenu': {
 ┃╠${prefix}harem
 ┃╠${prefix}hentaineko
 ┃╠${prefix}hneko
+┃╠${prefix}hpic
 ┃╠${prefix}hgif
-┃╠${prefix}hblowjob
 ┃╠${prefix}hmaid
 ┃╠═✪「 DOWNLOADER 」☯︎
 ┃╠${prefix}ytmp3 [url|quality]
@@ -3934,8 +3934,8 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}harem
 ┃╠${prefix}hentaineko
 ┃╠${prefix}hneko
+┃╠${prefix}hpic
 ┃╠${prefix}hgif
-┃╠${prefix}hblowjob
 ┃╠${prefix}hmaid
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
