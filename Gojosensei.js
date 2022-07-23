@@ -3315,14 +3315,14 @@ case 'maid':
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case 'hvideo':
-					reply(mess.wait)
-					axios.get(`https://zenzapis.xyz/downloader/hentaivid/longer?apikey=44083583a1`)
-					.then(({data}) => {
-					GojoMdNx.sendVideo(m.chat, data.video_1, mess.success, m)
-					})
-					break
-case 'hmaid':
+case 'hvideo':  case 'hentaivideo': {
+                        reply(mess.wait)
+                        let anu = await fetchJson('https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/hentais/hvideo.json')
+                        let random = anu[Math.floor(Math.random() * anu.length)]
+                        GojoMdNx.sendMessage(m.chat, { video: { url: random.vidone }, caption: `LOML VRU` }, { quoted: m })
+                    }
+                break
+case 'hmaid': case 'hentaimaid':
 					reply(mess.wait)
 					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/hentais/hmaid.json`)
 					.then(({data}) => {
