@@ -3293,13 +3293,7 @@ case 'hgif': case 'hentaigif': case 'hgifs':
 					.then(({data}) => {
 					GojoMdNx.sendGif(m.chat, data.url, mess.success, m)
 					})
-					break
-case 'hvideo':  case 'hvideos': case 'hentaivideos': case 'hentaivideo': {
-                        reply(mess.wait)
-                        let anu = await fetchJson('https://zenzapis.xyz/downloader/hentaivid/longer?apikey=44083583a1')
-                        GojoMdNx.sendMessage(m.chat, { video: { url: video_1 }, caption: `Video 1` }, { quoted: m })
-                    }
-                break                  
+					break                
 case 'waifu': case 'loli':
 					reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
@@ -3319,6 +3313,13 @@ case 'maid':
 					axios.get(`https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/maid.json`)
 					.then(({data}) => {
 					GojoMdNx.sendImage(m.chat, data.url, mess.success, m)
+					})
+					break
+case 'hvideo':
+					reply(mess.wait)
+					axios.get(`https://zenzapis.xyz/downloader/hentaivid/longer?apikey=44083583a1`)
+					.then(({data}) => {
+					GojoMdNx.sendVideo(m.chat, data.video_1, mess.success, m)
 					})
 					break
 case 'hmaid':
