@@ -3319,7 +3319,7 @@ case 'hvideo':  case 'hentaivideo': {
                         reply(mess.wait)
                         let anu = await fetchJson('https://raw.githubusercontent.com/Awesome-Tofu/wa-botAPIs/main/hentais/hvideo.json')
                         let random = anu[Math.floor(Math.random() * anu.length)]
-                        GojoMdNx.sendMessage(m.chat, { video: { url: random.vidone }, caption: `LOML VRU` }, { quoted: m })
+                        GojoMdNx.sendMessage(m.chat, { video: { url: random.vidone }, caption: `Horny *BONK*` }, { quoted: m })
                     }
                 break
 case 'hmaid': case 'hentaimaid':
@@ -3663,6 +3663,7 @@ case 'allmenu': {
 ┃╠${prefix}hneko
 ┃╠${prefix}hpic
 ┃╠${prefix}hgif
+┃╠${prefix}hvideo
 ┃╠${prefix}hmaid
 ┃╠═✪「 DOWNLOADER 」☯︎
 ┃╠${prefix}ytmp3 [url|quality]
@@ -3943,6 +3944,7 @@ await GojoMdNx.send5ButImg(from, `` + '' + ' ', `
 ┃╠${prefix}hneko
 ┃╠${prefix}hpic
 ┃╠${prefix}hgif
+┃╠${prefix}hvideo
 ┃╠${prefix}hmaid
 ┃╚═════════════✪
 ┗━━「 ${pushname} 」━⭓`,unicorn, [{"urlButton": {"displayText": "YouTube📍","url": `${myweb}`}},{"urlButton": {"displayText": "Script🔖","url": `${sc}`}},{"quickReplyButton": {"displayText": "🍜Donate🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "👤Owner👤","id": 'owner'}}] )
