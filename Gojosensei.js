@@ -2067,10 +2067,10 @@ break
                 case 'chatbot': case 'cb': {
                     if (!text) return reply(`Example 1 : ${prefix + command} on\nExmaple 2 : ${prefix + command} off`)
                     //let anu = await fetchJson(`https://www.kukiapi.xyz/api/apikey=5145883564-KUKISf4kHn2oT0/tofu/@Aditya/message=${text}`)
-                    let anu = await fetchJson(`https://www.kukiapi.xyz/api/apikey=5145883564-KUKISf4kHn2oT0/tofu/@Aditya/message=oke`)
+                    let chatb = await fetchJson(`https://www.kukiapi.xyz/api/apikey=5145883564-KUKISf4kHn2oT0/tofu/@Aditya/message=oke`)
                     // var string="text";
                     // document.write(string.replace(/ /g, '%20'));
-                    GojoMdNx.sendMessage(m.chat, { text: { url: anu.reply } }, { quoted: m })
+                    GojoMdNx.sendMessage(m.chat, { text: { url: chatb.reply } }, { quoted: m })
                      }
                      break
         case 'gimage': case 'googleimage': {
