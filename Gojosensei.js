@@ -2066,7 +2066,6 @@ break
                 break
                 case 'chatbot': {
                     if (!text) return reply(`Example 1 : ${prefix + command} on\nExmaple 2 : ${prefix + command} off`)
-                    if (!m.isGroup) return replay(`${mess.group}`)
                     if (args[0] === "on") {
                         if (db.data.chats[m.chat].chatbot) return reply(`Previously Active`)
                         db.data.chats[m.chat].chatbot = true
