@@ -2678,9 +2678,9 @@ case 'webtonsearch': case 'webtoon':
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'ig') {
                     if (!id) return reply(`No Query username, Example : ${prefix + command} ig josephxeon13`)
-                    let { result: anu } = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
-                    if (anu.status == false) return reply(anu.result.message)
-                    GojoMdNx.sendMedia(m.chat, anu.caption.profile_hd, '', `❤️ Full Name : ${anu.caption.full_name}\n❤️ User Name : ${anu.caption.user_name}\n❤️ ID ${anu.caption.user_id}\n❤️ Following : ${anu.caption.followers}\n❤️ Followers : ${anu.caption.following}\n❤️ Bussines : ${anu.caption.bussines}\n❤️ Professional : ${anu.caption.profesional}\n❤️ Verified : ${anu.caption.verified}\n❤️ Private : ${anu.caption.private}\n❤️ Bio : ${anu.caption.biography}\n❤️ Bio Url : ${anu.caption.bio_url}`, m)
+                    let anu = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
+                    if (anu.status == OK) return reply(anu.result.message)
+                    GojoMdNx.sendMedia(m.chat, anu.caption.profile, '', `❤️ Full Name : ${anu.caption.fullname}\n❤️ User Name : ${anu.caption.username}\n❤️ Following : ${anu.caption.followeing}\n❤️ Followers : ${anu.caption.followers}\n❤️ Post : ${anu.caption.post}\n❤️ Bio : ${anu.caption.biography}`, m)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
                     if (!id) return reply(`No Query username, Example : ${prefix + command} npm scrape-primbon`)
