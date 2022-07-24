@@ -2064,23 +2064,12 @@ break
                 })
                 }
                 break
-                case 'chatbot': {
+                case 'chatbot': case 'cb': {
                     if (!text) return reply(`Example 1 : ${prefix + command} on\nExmaple 2 : ${prefix + command} off`)
-                    if (args[0] === "on") {
-                        if (db.data.chats[m.chat].chatbot) return reply(`Previously Active`)
-                        db.data.chats[m.chat].chatbot = true
-                        reply(`${GojoMdNx.user.name} Has Turned ON Chatbot !`)
-                    } else if (args[0] === "off") {
-                        if (!db.data.chats[m.chat].chatbot) return reply(`Previously Inactive`)
-                        db.data.chats[m.chat].chatbot = false
-                        reply(`${GojoMdNx.user.name} Has Turned OFF Chatbot !`)
-                        } else {
-                            let buttons = [
-                                { buttonId: 'chatbot on', buttonText: { displayText: 'On' }, type: 1 },
-                                { buttonId: 'chatbot off', buttonText: { displayText: 'Off' }, type: 1 }
-                            ]
-                            await GojoMdNx.sendButtonText(m.chat, buttons, `Chatbot`, GojoMdNx.user.name, m)
-                        }
+                    let anu = await fetchJson(`https://www.kukiapi.xyz/api/apikey=5145883564-KUKISf4kHn2oT0/tofu/@Aditya/message=${text}`)
+                    // var string="text";
+                    // document.write(string.replace(/ /g, '%20'));
+                    GojoMdNx.sendMessage(m.chat, { text: { url: anu.reply } }, { quoted: m })
                      }
                      break
         case 'gimage': case 'googleimage': {
