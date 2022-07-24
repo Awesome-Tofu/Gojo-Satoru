@@ -1209,7 +1209,7 @@ case 'how':
 				if (!text) return replay(`Use Text, Example : ${prefix + command} is my face`)
 					const gimana = [`It's Okay`, `It's Difficult Darling`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah`,`Ohhh I See:(`,`The Patient, Boss:(`,`How Are You?`]
 					const ya = gimana[Math.floor(Math.random() * gimana.length)]
-GojoMdNx.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: m })
+GojoMdNx.sendMessage(from, { text: `Question : ${q}\nAnswer : ${ya}` }, { quoted: m })
 
 					break
 case 'rate':
@@ -2634,13 +2634,14 @@ case 'webtonsearch': case 'webtoon':
             }
             break
             case 'shio': {
-                if (!text) throw `Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
+                if (!text) throw `Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.html`
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return reply(anu.message)
                 GojoMdNx.sendText(m.chat, `❤️ *Results :* ${anu.message}`, m)
             }
             break
-	    case 'stalker': case 'stalk': {
+            //ded codes 
+	  /*  case 'stalker': case 'stalk': {
 		if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply('Your Daily Limit Has Expired')
                 if (!text) return reply(`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
                 let [type, id, zone] = args
@@ -2679,7 +2680,7 @@ case 'webtonsearch': case 'webtoon':
                     if (!id) return reply(`No Query username, Example : ${prefix + command} ig aditya.agatsuma`)
                     let anu = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
                     if (anu.status == false) return reply(anu.result.message)
-                    GojoMdNx.sendMedia(m.chat, anu.profile, '', `❤️ Full Name : ${anu.fullname}\n❤️ User Name : ${anu.username}\n❤️ Following : ${anu.followeing}\n❤️ Followers : ${anu.followers}\n❤️ Post : ${anu.post}\n❤️ Bio : ${anu.biography}`, m)
+                    GojoMdNx.sendMedia(m.chat, anu.profile, '', `❤️ Full Name : ${anu.caption.fullname}\n❤️ User Name : ${anu.caption.username}\n❤️ Following : ${anu.caption.followeing}\n❤️ Followers : ${anu.caption.followers}\n❤️ Post : ${anu.caption.post}\n❤️ Bio : ${anu.caption.biography}`, m)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
                     if (!id) return reply(`No Query username, Example : ${prefix + command} npm scrape-primbon`)
@@ -2691,7 +2692,7 @@ case 'webtonsearch': case 'webtoon':
                     reply(`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
                 }
             }
-            break
+            break*/
 	        case 'tiktokd': case 'tiktoknowmx': {
                 if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
@@ -2898,6 +2899,7 @@ Available Formats: pdf, docx, pptx, xlsx`)
 		}
 		}
 		break
+        //ded codes
 		/*case 'hadisxxx': case 'hadistxxx': {
 		if (!args[0]) return reply(`Example:
 ${prefix + command} bukhari 1
