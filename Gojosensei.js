@@ -2287,7 +2287,6 @@ case 'webtonsearch': case 'webtoon':
             }
 	    break
         case 'meme': {
-            reply(mess.wait)
             let anu = await fetchJson('https://meme-api.herokuapp.com/gimme')
             GojoMdNx.sendMessage(m.chat, { image: { url: anu.url }, caption: `*MEME*` }, { quoted: m })
         }
@@ -2677,7 +2676,7 @@ case 'webtonsearch': case 'webtoon':
                     reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'ig') {
-                    if (!id) return reply(`No Query username, Example : ${prefix + command} ig josephxeon13`)
+                    if (!id) return reply(`No Query username, Example : ${prefix + command} ig aditya.agatsuma`)
                     let anu = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
                     if (anu.status == false) return reply(anu.result.message)
                     GojoMdNx.sendMedia(m.chat, anu.profile, '', `❤️ Full Name : ${anu.caption.fullname}\n❤️ User Name : ${anu.caption.username}\n❤️ Following : ${anu.caption.followeing}\n❤️ Followers : ${anu.caption.followers}\n❤️ Post : ${anu.caption.post}\n❤️ Bio : ${anu.caption.biography}`, m)
